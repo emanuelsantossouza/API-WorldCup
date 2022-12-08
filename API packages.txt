@@ -1,0 +1,42 @@
+Comando para Criar o projeto
+dotnet new webapi -f net6.0
+
+Pacotes para Conexão com BD
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
+dotnet add package Microsoft.EntityFrameworkCore.InMemory --version 6.0.11
+
+Pacote para Migrations
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.11
+
+Pacote para Criar Controller
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.0.10
+
+Comando para criar os controllers
+dotnet-aspnet-codegenerator controller -api -name CountryController -m Country -dc AppDbContext --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -api -name PlayerController -m Player -dc AppDbContext --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -api -name WorldCupController -m WorldCup -dc AppDbContext --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -api -name WorldCupCountryController -m WorldCupCountry -dc AppDbContext --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -api -name WorldCupCountryPlayerController -m WorldCupCountryPlayer -dc AppDbContext --relativeFolderPath Controllers
+
+
+
+
+dotnet add package AutoMapper --version 12.0.0
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 12.0.0
+
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 6.0.11
+dotnet add package Swashbuckle.AspNetCore.Filters --version 7.0.6
+
+
+
+
+
+dotnet new mvc -f net6.0
+
+dotnet add package Newtonsoft.Json --version 13.0.2
+
+dotnet-aspnet-codegenerator view Index List -udl -outDir "Views/Country" -m GetCountryDto
+dotnet-aspnet-codegenerator view Create Create -udl -outDir "Views/Country" -m AddCountryDto
+dotnet-aspnet-codegenerator view Edit Edit -udl -outDir "Views/Country" -m UpdateCountryDto
+dotnet-aspnet-codegenerator view Delete Delete -udl -outDir "Views/Country" -m GetCountryDto
+
